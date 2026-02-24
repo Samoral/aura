@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
     
 
 
@@ -17,7 +17,7 @@
         
           <script src="https://unpkg.com/lucide@latest"></script>
         <title>️Aura</title>
-        <link rel="icon" type="image/png" href="aura_logo3.png">
+        <link rel="icon" type="image/png" href="aura_logo3.png" />
     </head>
 
   <style>
@@ -25,13 +25,7 @@
     
 
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
-    ::-webkit-scrollbar{
-      widh: 0;
-      background-color:transparent;
-    }
-    ::-webkit-scrollbar:hover {
-      wdth: 10px;
-    }
+
   body {
     user-select: none;
    backgrund: rgb(10, 1, 30);
@@ -62,7 +56,6 @@
   .seeknal_navBar_cont {
     posiion: absolute;
             top: 0;
-            cursor: pointer;
             left:0;
             width:;
             height: 100vh;
@@ -103,7 +96,7 @@
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #000102, #111131);
+    backgound: linear-gradient(135deg, #000102, #111131);
     margin: 0 auto 15px;
     border: 5px solid rgb(66, 0, 128);
 
@@ -159,7 +152,6 @@
             align-items: center;
             gap: 16px;
             colr: #475569;
-            cursor: pointer;
         }
 
          .seeknal_navBar_list p i {
@@ -239,6 +231,7 @@
 .mainPage {
   position: relative;
   flex: 1;
+  display:none;
   overflow-y:scroll;
 }
 
@@ -258,6 +251,7 @@
       top: 50px;
       z-index: 1;
       background: white;
+      display:none;
     }
     
     .courseList .courses {
@@ -359,12 +353,18 @@
      display: flex;
      justify-content: center;
      color: #0F172A;
+     align-items: center;
      font-size: 14px;
-     margin-top: 8px;
+     margin-top: 12px;
    } 
 
-   .lessons:hover {
+   .dark_list_or_important {
+    transition-duration: .5s;
+   }
+
+   .lessons:hover{
     transform: translateY(-2px);
+    transition-duration: .5s;
     background: #1b1636;
    }
     
@@ -373,8 +373,8 @@
       align-items: center;
       padding: 15px;
       width: 90%;
-      background: #16122a;
-      color: white;
+      backgound: #16122a;
+      coor: white;
       border-radius: 10px;
       transition-duration: .5s;
       
@@ -393,7 +393,6 @@
     .disabled {
       
       opacity: 0.4;
-      cursor: not-allowed;
       pointer-events: none;
     }
     
@@ -450,10 +449,7 @@
   
   
   
-  .contin {
-    cursor:pointer;
-  }
-  
+
   
   .quizOption {
     display:flex;
@@ -464,7 +460,6 @@
     border-radius:15px;
     align-items:center;
     font-size:15px;
-    cursor: pointer;
   }
   
   .incorrect {
@@ -487,8 +482,9 @@
     margin-right: 5px;
     width: 10px;
     height: 10px;
+    color: #abbeda;
     border-radius: 50%;
-    background: #1a1a1a;
+    background: #abbeda;
   }
   
 
@@ -501,9 +497,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .draggable_option_container {
+    background: #16122a;
+  }
   
  .draggable_option {
    margin-bottom:10px;
+   background: rgba(10, 5, 20, 0.3);
+   border-radius: 10px;
+   padding: 10px;
+   font-family: 'inter',sans-serif;
  }
  
  #cts_simulation,#dts_simulation {
@@ -515,6 +519,97 @@
  }
  
   @media only screen and (min-width:1000px) {
+
+    ::-webkit-scrollbar{
+      widh: 0;
+      background-color:transparent;
+    }
+    ::-webkit-scrollbar:hover {
+      wdth: 10px;
+    }
+
+
+.quizCont {
+  width:50vw;
+}
+
+.draggable_option {
+  cursor: grabbing;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+    .csr_pointer, .seeknal_navBar_list p, .offers input, .comment_txtarea_container i, .offers, .nextQuiz, .contin, .quizOption, .lecture_wrapper, .icon-container, .streak, .user_comment_btns i, .comment_icon, .comment_container_back, .upload_container {
+      cursor: pointer;
+    }
+    
+    
+    
+    
+            .upload_container {
+                background: #16122a;
+                padding:0 10px 10px 10px;
+                position: absolute;
+                width: 250px;
+                border-radius: 10px;
+                color: white;
+                text-align: center;
+                position: absolute;
+                top: 70px;
+                z-index: 2;
+                display: none;
+                right: 310px;
+            }
+
+            .upload_container::after {
+                content: " ";
+                width: 10px;
+                height: 5px;
+                background: #16122a;
+                border-radius: 10px;
+            }
+
+            .upload_container input {
+                width: 70%;
+                color: #abbeda;
+                background: transparent;
+                border: 0.3px solid rgba(255,255,255,0.2);
+                height: 20px;
+                border-radius: 5px;
+            }
+
+            .upload_container i {
+              width: 20px;
+              height: 20px;
+              pdding: 5px;
+              border-radius: 50%;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+            }
+
+            .upload_container i:hover{
+              background: #d5dfef47;
+              background-position: center;
+              background-size: cover;
+              transition-duration: .3s;
+            }
+
+            .upload_container div {
+                display: flex;
+                gp: 10px;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .upload_container input:focus{
+              padding: 2px;
+              outline: 1px solid rgb(148, 58, 208);
+            }
+
+        
     
    /*.seeknal_navBar {
     top:0;
@@ -552,37 +647,13 @@
       height: 100%;
     }
      .content {
-      padding:15px 10px;
+      paddng:15px 10px;
       margin: 0;
       flex: 0.9;
       overflow-y: scroll;
-    }
-     .quote {
-      width: 100%;
-      padding:15px 5px;
-      padding-top: 0;
-      position: absolute;
-      top: 0;
-      z-index: 2;
-      left: 0;
-      margin: 0;
-      background:ghostwhite;rgba(125,120,25,0.7);
-      colr:rgba(8,17,35,1);
-      display: none;
-    }
-    
-    .quote .quoteChild {
-      width: 100%;
-      background:#1a1a1a; rgba(205,15,45,1);
-      color:white;
-      z-index: 2;
-      marin: -5px;
-      margin-left: -5px;
-      padding:1px 0 2px 0;
-      border-botom-left-radius:10px;
-      border-botom-right-radius:10px;
       
-    } 
+    }
+
 
     .quizWrapper {
       top: 0;
@@ -617,13 +688,679 @@
 
   }
 
-  @media only screen and (max-width:600px) {
+ 
+  
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: s;
+}
+
+.lecture_wrapper {
+  pading: 20px 20px 0px 20px;
+  margin: 20px 10px 20px 10px;
+  backgound: #fff;
+  border-radius: 20px;
+}
+
+.user_pixLoggedin {
+  background-image: url('https://api.dicebear.com/7.x/avataaars/svg?seed=SamzTech');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+ 
+.icon-container {
+            
+            
+            /* High-energy background: Deep Indigo with glassmorphism */
+            background:linear-gradient(to right, purple 0%, blue 100%); #1a0b30; rgba(1, 1, 33, 0.8);
+            border: 1px solid purple; rgba(99, 102, 241, 0.3);
+            
+            /* Intense energy glow */
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.15), 
+                        inset 0 0 10px rgba(168, 85, 247, 0.1);
+            
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+        .icon-container:hover {
+            transform: scale(1.02);
+            border-color: rgba(168, 85, 247, 0.6);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .label {
+            /* Bright, electric text gradient */
+            background: linear-gradient(90deg, #ff00bf, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.5px;
+        }
+        
+        .note_nav {
+          position: absolute;
+
+          padding: 20px 10px;
+          display: flex;
+          top: 45vh;
+          align-items: center;
+          justify-content: center;
+          background:rgba(27, 26, 26, 0.5);
+          font-size: 1.15rem;
+          color: grey;
+          border-radius: 4px;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          
+        }
+
+        .note_nav:hover {
+          background:rgba(27, 26, 26, 1) ;
+          font-weight: bolder;
+          font-size: 17px;
+        }
+
+        
+
+
+        .comment_container {
+                justify-cntent: center;
+                align-items: center;
+                height: 100vh;
+                border-radius: 10px;
+                margin: 0;
+                width: 100%;
+                z-index: 2;
+                position: absolute;
+                top: 0;
+                left: 0;
+                backdrop-filter: blur(5px);
+                display: none;
+                transition-duration: 1.5s;
+            }
+
+
+            .comment_container_active {
+              display: flex;
+              transition-duration: 1.5s;
+            }
+
+
+            .user_comment_btns i {
+              width: 13px;
+              height: 13px;
+            
+            }
+
+            .comment_txtarea_container i {
+                color: white;
+            }
+
+            .comment_sub_container {
+
+                background: #16122a;
+                border: 1px solid #abbeda;
+                backdrop-filter: blur(5px);
+                padding:5px 10px 10px;
+                width: 60%;
+                margin: auto;
+                height: 70%;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+
+
+            }
+
+            .comment_txtarea_container {
+                display: flex;
+                margin: 0;
+                gap: 10px;
+                bottom: 10px;
+                align-items: center;
+                justify-content: space-around;
+                max-height: fit-content;
+                
+            }
+
+          
+
+            .comment_txtarea {
+                border: 0.3px solid rgba(255,255,255,0.2);
+                border-radius: 10px;
+                width: 50%;
+                padding: 10px;
+                color: #abbeda;
+                text-align: left;
+                background: transparent;
+            }
+
+            .comment_chat_block {
+                flex: 1;
+                transition-duration: .5s;
+                overflow-y: scroll;
+            }
+
+            .comment_txtarea_container i {
+                color: white;
+                width: 40%;
+            }
+
+            .comment_header {
+                display: flex;
+                justify-content: space-between;
+                color: #abbeda;
+                align-items: center;
+                margin: 0;
+                
+            }
+
+            .user_comment {
+                display: flex;
+                gap: 10px;
+                with: 35%;
+                justify-conent: space-between;
+                margin: 20px;
+                
+            }
+
+            .user_commentPix {
+                width: 35px;
+                height: 35px;
+                background:url('https://api.dicebear.com/7.x/adventurer/svg?seed=boy-smile') ;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+                borer: 2px solid #6366f1; rgb(66,0,128);
+            }
+
+            .user_commentTxt {
+                width: 50%;
+                color: #abbeda;
+                display: flex;
+                gap:5px;
+                flex-direction: column;
+            }
+
+            .user_commentTxt b {
+                color: #6366f1;
+                font-family: 'inter',sans-serif;
+                font-size: 13px;
+            }
+
+            .user_comment_btns i {
+                color: white;
+                font-size: 10px;
+            }
+
+
+          
+
+            .popup{
+                width: ;
+                height: ;
+                pading: 10px;
+                backgrond: #16122a;
+                coor: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                font-size: 14px;
+                width: 100vw;
+                height: 100vh;
+                backdrop-filter: blur(10px);
+                position: absolute;
+                z-index: 3;
+                disply:none;
+            }
+
+            .sub_popup {
+              width: 60%;
+              background: #16122a;
+              padding: 10px;
+            }
+
+            .popup h3, .popup h2 {
+                color: white;
+            }
+
+            .register_premium h2 {
+
+            }
+
+            .offers {
+                margin: 10px;
+                padding: 10px;
+                border-radius: 10px;
+                background: black;
+                color: #abbeda;
+                display: block;
+            }
+
+            .offers span {
+                color:#6366f1;
+                font-weight: bolder;
+            }
+
+            .offers div {
+                margin: 10px 10px;
+            }
+
+
+            .offers block {
+                dispay: none;
+                opaclity: 0;
+                transition-duration: .5s;
+            }
+
+            .offers:hover > block {
+                disply: block;
+                opacty: 1;
+                transition-duration: .5s;
+            }
+
+
+    @media only screen and (max-width:600px) {
+     
+      .upload_container {
+        width:99%;
+        border:1px solid #ab0098;
+      }
+     
+             canvas {
+            vertical-align: middle;
+        }
+     
+             .comment_container {
+                justify-cntent: center;
+                align-items: center;
+                height: 100vh;
+                border-radius: 10px;
+                margin: 0;
+                width: 100%;
+                z-index: 2;
+                position: absolute;
+                top: 0;
+                left: 0;
+                backdrop-filter: blur(5px);
+                display: none;
+                transition-duration: 1.5s;
+            }
+
+
+            .comment_container_active {
+              display: flex;
+              transition-duration: 1.5s;
+            }
+
+
+            .user_comment_btns i {
+              width: 13px;
+              height: 13px;
+            
+            }
+
+            .comment_txtarea_container i {
+                color: white;
+            }
+
+            .comment_sub_container {
+
+                background: #16122a;
+                border: 1px solid #abbeda;
+                backdrop-filter: blur(5px);
+                pading:5px 10px 10px;
+                width: 90%;
+                margin: auto;
+                height: 70%;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+
+
+            }
+
+            .comment_txtarea_container {
+                display: flex;
+                margin: 0;
+                gap: 10px;
+                bottom: 10px;
+                align-items: center;
+                justify-content: space-around;
+                max-height: fit-content;
+                
+            }
+
+          
+
+            .comment_txtarea {
+                border: 0.3px solid rgba(255,255,255,0.2);
+                border-radius: 10px;
+                outline:none;
+                width: 50%;
+                padding: 10px;
+                color: #abbeda;
+                text-align: left;
+                background: transparent;
+            }
+
+            .comment_chat_block {
+                flex: 1;
+                transition-duration: .5s;
+                overflow-y: scroll;
+            }
+
+            .comment_txtarea_container i {
+                color: white;
+                width: 40%;
+            }
+
+            .comment_header {
+                display: flex;
+                justify-content: space-between;
+                color: #abbeda;
+                align-items: center;
+                margin: 0;
+                
+            }
+
+            .user_comment {
+                display: flex;
+                gap: 10px;
+                with: 35%;
+                justify-conent: space-between;
+                margin: 20px;
+                
+            }
+
+            .user_commentPix {
+                width: 35px;
+                height: 35px;
+                background:url('https://api.dicebear.com/7.x/adventurer/svg?seed=boy-smile') ;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+                borer: 2px solid #6366f1; rgb(66,0,128);
+            }
+
+            .user_commentTxt {
+                width: 90%;
+                color: #abbeda;
+                display: flex;
+                gap:5px;
+                flex-direction: column;
+            }
+
+            .user_commentTxt b {
+                color: #6366f1;
+                font-family: 'inter',sans-serif;
+                font-size: 13px;
+            }
+
+            .user_comment_btns i {
+                color: white;
+                font-size: 10px;
+            }
+
+     
+               .upload_container {
+                background: #16122a;
+                padding:0 10px 10px 10px;
+                position: absolute;
+                width: 250px;
+                border-radius: 10px;
+                color: white;
+                text-align: center;
+                position: absolute;
+                top: 70px;
+                left:10%;
+                z-index: 2;
+                display: none;
+                rigt: 310px;
+            }
+
+            .upload_container::after {
+                content: " ";
+                width: 10px;
+                height: 5px;
+                background: #16122a;
+                border-radius: 10px;
+            }
+
+            .upload_container input {
+                width: 70%;
+                color: #abbeda;
+                background: transparent;
+                border: 0.3px solid rgba(255,255,255,0.2);
+                height: 20px;
+                border-radius: 5px;
+            }
+
+            .upload_container i {
+              width: 20px;
+              height: 20px;
+              padding: 5px;
+              border-radius: 50%;
+            }
+
+            .upload_container i:hover{
+              background: #d5dfef47;
+              background-position: center;
+              background-size: cover;
+              transition-duration: .3s;
+            }
+
+            .upload_container div {
+                display: flex;
+                gp: 10px;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .upload_container input:focus{
+              padding: 2px;
+              outline: 1px solid rgb(148, 58, 208);
+            }
+
+        
     
-    .lecture_wrapper {
+   /*.seeknal_navBar {
+    top:0;
+    left:0;
+    position: fixed;
+    border-radius: 10px;
+    height: 80vh;
+    backdrop-filter:blur(1.5px);
+    overflow-y: scroll;
+  }  */
+    
+        .signalNote {
+      display: flex;
+      margin-top: -10px;
+      min-height: 80vh;
+      flex: 1;
+      scroll-snap-type: x mandatory;
+      overflow-x: hidden;
+    }
+    
+    .progress {
       background: white;
-      padding: 25px 0px 25px;
-      width: 90vw;
-      margin-left: 0;
+      padding: 15px;
+      flex:1;
+      height: 8px;
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+    }  
+    
+        .progress div {
+      background:rgba(200,200,215,0.26); rgba(225,225,225,0.8);
+      border-radius: 1rem;
+      width: 55vw;
+      height: 100%;
+    }
+     .content {
+      paddng:15px 10px;
+      margin: 0;
+      flex: 0.9;
+      overflow-y: scroll;
+      
+    }
+
+
+    .quizWrapper {
+      top: 0;
+      left: 0;
+      max-width:300px ;
+      position: absolute;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    
+    .data_x1d2 {
+      display: flex;
+      flex-direction:row;
+    }
+    .notes {
+      padding:0 0 0 30px;
+    }
+
+    body {
+      fnt-size: 20px;
+
+    }
+
+    .listing-explanation {
+      font-size: 20.5px;
+    }
+
+    
+
+  }  
+     
+     .notes_paragraph {
+       padding: 5px;
+     }
+     
+    .mainPage {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    } 
+    
+    .pointer-events {
+      pointer-events:none;
+    }
+     
+      
+      .quizCont {
+        width:auto;
+      }
+
+  .header {
+    padding: 10px;
+    background:rgba(225,225,225,0.5);rgba(25,25,25,0.1) ;
+    display: flex
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  
+  
+  .header #courseName {
+    width: 90%;
+    color: blue;
+  }
+  
+  #courseName i {
+    color: blue;
+    font-weight: bolder;
+  }
+  
+  .steak {
+    display: flex;
+    padding: 10px;
+    margin-bottom: -10px;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+  }
+  
+  .streak .streakChild1 {
+   
+    padding: 5px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  .streak div {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    width: 55px;
+    height: 20px;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: bolder;
+    border-radius: 20px;
+  }
+
+
+.content .title {
+  width: 90%;
+}
+
+.popup {
+  display: none;
+}
+
+.popup h3 {
+  padding:0px 10px;
+}
+
+.sub_popup {
+  width: 100%;
+  padding: 0;
+}
+
+.offers {
+  opacity: 1;
+}
+
+
+    #upload_txt {
+      display: none;
+    }
+    
+    header {
+      
+    }
+
+    .lecture_wrapper {
+      background: black;
+      padding: 25px 10px 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 20px 10px 20px 10px;
+      border: 2px solid gold;
+      box-sadow: 0px 0px 2px #00a5a5;
+      borer-radius: 15px;
     }
     
         .seeknal_navBar_cont {
@@ -637,15 +1374,9 @@
       display: block;
     }
     
-    .content {
-      overflow: scroll;
-    }
-    
+
    
     
-    .content .title {
-      width: 70%;
-    }
     .icon {
       border-radius: 50%;
     }
@@ -688,7 +1419,9 @@
     }
     
      .content {
-      padding: 10px;
+      flex: 1;
+      overflow-y: scroll;
+      overflow-x: hidden;
       margin: 0;
       
     }
@@ -703,138 +1436,36 @@
       scroll-snap-align:start;
     }  
     
-        .quote {
-      width: 97.2%;
-      padding:15px 5px;
-      padding-top: 0;
-      position: absolute;
-      top: 0;
-      z-index: 2;
-      left: 0;
-      margin: 0;
-      background:ghostwhite;rgba(125,120,25,0.7);
-      colr:rgba(8,17,35,1);
-      display: none;
-    }
-    
-    .quote .quoteChild {
-      width: 100%;
-      background:#1a1a1a; rgba(205,15,45,1);
-      color:white;
-      z-index: 2;
-      margin: -5px;
-      margin-left: -5px;
-      padding:1px 5px 2px 5px;
-      
-    }
-    
-  }
-  
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100vh;
-  justify-content: s;
-}
 
-.lecture_wrapper {
-  pading: 20px 20px 0px 20px;
-  margin: 20px 10px 20px 10px;
-  backgound: #fff;
-  border-radius: 20px;
-  cursor: pointer;
-}
 
-.user_pixLoggedin {
-  background-image: url('https://api.dicebear.com/7.x/adventurer/svg?seed=boy-smile');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
- 
-.icon-container {
-            
-            
-            /* High-energy background: Deep Indigo with glassmorphism */
-            background:linear-gradient(to right, purple 0%, blue 100%); #1a0b30; rgba(1, 1, 33, 0.8);
-            border: 1px solid purple; rgba(99, 102, 241, 0.3);
-            
-            /* Intense energy glow */
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.15), 
-                        inset 0 0 10px rgba(168, 85, 247, 0.1);
-            
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-        }
-        .icon-container:hover {
-            transform: scale(1.02);
-            border-color: rgba(168, 85, 247, 0.6);
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
-        }
-        canvas {
-            vertical-align: middle;
-        }
-        .label {
-            /* Bright, electric text gradient */
-            background: linear-gradient(90deg, #ff00bf, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 0.5px;
-        }
-        
-        .note_nav {
-          position: absolute;
+  }      
 
-          padding: 20px 10px;
-          display: flex;
-          top: 45vh;
-          align-items: center;
-          justify-content: center;
-          background:rgba(27, 26, 26, 0.5);
-          font-size: 1.15rem;
-          color: grey;
-          border-radius: 4px;
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-          
-        }
-
-        .note_nav:hover {
-          background:rgba(27, 26, 26, 1) ;
-          font-weight: bolder;
-          font-size: 17px;
-        }
-
-        
-       .streak {
-        cursor: pointer;
-       }
 
         </style>
     
     <body>
-      
+
 <main class="wrapper"> <!--The wrapper to wrap the sidebar and main content-->
 
-    
+
 <!--side bar-->
-<div class="seeknal_navBar_cont dark_deep">
+<div class="seeknal_navBar_cont dark_eep csr_pointer">
 
     <div class="seeknal_navBar dark_deep">
         
     <div class="user_details dark_deep" >
 
       <div class="logged_in" style="display: none;">
-        <div class="user_pix">
+        <div class="user_pix user_pixLoggedin" >
             <i class="fa fa-uer " style="color: white;"></i>
         </div>
         <div style="text-align: center;">
             <h3 id="user_name" style="margin: 0; font-size: 16px;">Adeyemi Adedamola Samuel (SamzTech) </h3>
-            <p style="margin: 5px 0 0;color: grey; font-size: 14px; font-weight: 600px;overflow: hidden;text-overflow: ellipsis;">Student Account | Fullstack Dev | Business Specialist | AI Developer</p>
+            <p style="margin: 5px 0 0;color: grey; font-size: 14px; font-weight: 600px;overflow: hidden;text-overflow: ellipsis;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Student Account | Fullstack Dev | Business Specialist | AI Developer</p>
         </div>
     </div>
 
-    <div class="not_loggedIn">
+    <div class="not_loggedIn" style="displlay: none;">
       <div class="user_pix">
             <i class="fa fa-user " style="color: white;font-size: 30px;"></i>
         </div>
@@ -887,21 +1518,27 @@
 
   <section class="mainPage">
  
+          
    <!-- Header -->
-        <header style="background-color: rgba(10, 5, 20, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 0.5rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.05); z-index: 20; boxsizing: border-box;">
-           <div id="brandName" style="display: flex;gap: 1rem;cursor: pointer;"> <h1 style="font-size: 1.875rem; font-weight: 900; letter-spacing: -0.05em; margin: 0; background: linear-gradient(to right, #c084fc, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AURA</h1>         <canvas id="aiIcon" width="24" height="24"></canvas>
+   
+        <header class="wideScreen screens" style="background-color: rgba(10, 5, 20, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 0.5rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.05); z-index: 20; boxsizing: border-box;">
+           <div id="brandName" style="display: flex;gap: 1rem;cursor: pointer;"> <h1 style="font-size: 1.875rem; font-weight: 900; letter-spacing: -0.05em; margin: 0; background: linear-gradient(to right, #c084fc, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AURA</h1>         <canvas class="aiIcon" width="24" height="24"></canvas>
   </div>
+
+            <div class="toggle_light">
+              t
+            </div>
             
             <div style="display: flex; align-items: center; gap: 1.5rem;">
-                <button style="background: linear-gradient(to right, #9333ea, #2563eb); border: none; color: white; padding: 0.5rem 1.25rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                <button class="upload_icon" style="background: linear-gradient(to right, #9333ea, #2563eb); border: none; color: white; padding: 0.5rem 1.25rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
                     <i data-lucide="upload" style="width: 16px; height: 16px;"></i>
-                    Upload File Or URL
+                   <span id="upload_txt"> Upload File Or URL </span>
                 </button>
 
                 <div class="streak" style="display: flex; align-items: center; gap: 0.75rem;">
                     <div style="background-color: #1a0b30; padding: 0.375rem 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 700;">
                         <i data-lucide="heart" style="color: #ef4444; width: 16px; height: 16px;"></i>
-                        <span>15</span>
+                        <span class="user_life">5</span>
                     </div>
                     <div style="background-color: #1a0b30; padding: 0.375rem 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 700;">
                         <i data-lucide="zap" style="color: #facc15; width: 16px; height: 16px;"></i>
@@ -911,14 +1548,53 @@
                         <i data-lucide="box" style="color: #60a5fa; width: 16px; height: 16px;"></i>
                         <span>1550</span>
                     </div>
-                    <div style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #2563eb; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; color: #60a5fa; background-color: rgba(37, 99, 235, 0.05);">12%</div>
+                    <div class="reading_percentage" style="width: 30px; height: 30px; border-radius: 50%; border: 2px solid #2563eb; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; color: #60a5fa; background-color: rgba(37, 99, 235, 0.05);" >12%</div>
                 </div>
             </div>
-        </header>
+        </header>   
+   
+    <div class="header smallScreen screens" style="pading: 16px 24px;font-size: 14px;font-weight: bolder;background-color: rgba(10, 5, 20, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+">
+      
+ <div style="display: flex; justify-content: space-between; align-items:center;font-weight: 800px;font-size: 18px;color: 334155;margin-bottom:10px;gap:20px"> 
+      <div class="fa fa-bars" id="navBar" ></div>
+           <div id="brandName" style="display: flex;gap: 1rem;cursor: pointer;"> <h1 style="font-size: 1.875rem; font-weight: 900; letter-spacing: -0.05em; margin: 0; background: linear-gradient(to right, #c084fc, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AURA</h1>         <canvas class="aiIcon_2" width="24" height="24"></canvas>
+  </div>
+     
+                     <button class="upload_icon" style="background: linear-gradient(to right, #9333ea, #2563eb); border: none; color: white; padding: 0.5rem 1.25rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <i data-lucide="upload" style="width: 16px; height: 16px;"></i>
+                   <span id="upload_txt"> Upload File Or URL </span>
+                </button>
+
+  </div>
+     
+
+                <div class="streak" style="display: flex; align-items: center; ga: 0.75rem;justify-content:space-between">
+                    <div style="background-color: #1a0b30; padding: 0.375rem 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 700;">
+                        <i data-lucide="heart" style="color: #ef4444; width: 16px; height: 16px;"></i>
+                        <span class="user_life">5</span>
+                    </div>
+                    <div style="background-color: #1a0b30; padding: 0.375rem 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 700;">
+                        <i data-lucide="zap" style="color: #facc15; width: 16px; height: 16px;"></i>
+                        <span>100</span>
+                    </div>
+                    <div style="background-color: #1a0b30; padding: 0.375rem 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; gap: 0.5rem; font-size:; font-weight: 700;">
+                        <i data-lucide="box" style="color: #60a5fa; width: 16px; height: 16px;"></i>
+                        <span>1550</span>
+                    </div>
+                    <div class="reading_percentage" style="width: 40px; height: 40px; padding:5px;border-radius: 50%; border: 2px solid #2563eb; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; color: #60a5fa; background-color: rgba(37, 99, 235, 0.05);">12%</div>
+                </div>
+            </div>
+
+    </div>
+    
     
     <div class="content" id="signal_content">
+
+
+   
     
-<div style="display: flex;align-items: center;gap: 10px;font-size: 13px; margin:10px;"><div style="border-radius: 20px;width: 8px;height: 16px; background: #2563eb;"></div> <b style="font-family: 'inter', sans-serif;">Course Title: Signals and Systems</b></div>
+<div style="display: flex;align-items: center;gap: 10px;font-size: 13px; margin:10px;bacground:red;width:100vw"><div style="border-radius: 20px;width: 8px;height: 16px; background: #2563eb;box-shadow:0px 0px 10px #6366f1"></div> <b style="font-family: 'inter', sans-serif;">Course Title: Signals and Systems</b></div>
 
     <div class="lecture_wrapper dark_white" >
     <div class="lec dark_transparent" id="lec_1"><span class="icon fa fa-play"></span> <span class="title"> Lecture 001 <br> <span style="font-size: 12px;color: grey;">Introduction</span></span> <i class="fa fa-angle-up" ></i> </div>
@@ -928,7 +1604,7 @@
     <div class="subLec active" index=0>
       
       <div class="lessons dark_transparent" id="lesson_1">
-        <div style="width: 30px;height: 30px;padding: 5px;border-radius: 8px;background: #e1e1ef;color: blue;display:flex;justify-content:  center;align-items: center;"><i class="fa fa-book" style="font-weight: 500px;"></i></div>
+        <div style="width: 50px;height: 30px;padding: 5px;border-radius: 8px;background: #e1e1ef;color: blue;display:flex;justify-content:  center;align-items: center;"><i class="fa fa-book" style="font-weight: 500px;"></i></div>
         
         <div style="width: 100%;">
         <small style="color: grey;font-size: 11px; font-weight: bolder;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">LESSON 1 <i class="fa fa-check-circle finished_course" style="color:green;display:none"></i></small>
@@ -961,7 +1637,7 @@
 
   
   <div class="lecture_wrapper dark_white">
-    <div class="lec dark_transparent id="lec_1"><span class="icon fa fa-play"></span> <span class="title"> Lecture 002 <br> <span style="font-size: 12px;color: grey;">Introduction</span></span> <i class="fa fa-angle-up" ></i> </div>
+    <div class="lec dark_transparent" id="lec_1"><span class="icon fa fa-play"></span> <span class="title"> Lecture 002 <br> <span style="font-size: 12px;color: grey;">Introduction</span></span> <i class="fa fa-angle-up" ></i> </div>
     
     
     
@@ -987,7 +1663,7 @@
         <div style="width: 30px;height: 30px;padding: 5px;border-radius: 8px;background: #e1e1ef;color: black;display:flex;justify-content:  center;align-items: center;"><i class="fa fa-lock"></i></div>
         
         <div >
-        <small style="color: grey;font-size: 11px; font-weight: bolder;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">LESSON 4 <i class="fa fa-check-circle finished_course style="color:green;display:none"></i></small>
+        <small style="color: grey;font-size: 11px; font-weight: bolder;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">LESSON 4 <i class="fa fa-check-circle finished_course" style="color:green;display:none"></i></small>
                 <span class="page_counter" style="opacity:0;">1</span>
                <div style="display: flex;justify-content: space-between;margin-top: 5px; font-weight:bold;font: 13px;font-family: 'inter', sans-serif;width: 100%;" class="data_x2d2"> Odd Signals </div>
 
@@ -1092,36 +1768,74 @@
   
   
     
-  </section>
   
+</section>
+
+    <div class="upload_container" style="display:none">
+      <div >
+      <i class="upload_back fa fa-chevron-left"></i>
+            <h3>Enter URL or select file(s)</h3>
+            </div>
+            <div>
+            <i class="fa fa-plus"></i>
+            <input type="url" name="upload_url" id="upload_url" placeholder="type URL..">
+            <i class="fa fa-send"></i>
+            </div>
+        </div>
   
+  <div class="popup">
+    <div class="sub_popup">
+        <h3>You have run out of your free tier for today. Come back tomorrow or register for premium</h3>
+
+        <div class="register_premium">
+            
+            <h2 >Select a plan</h2>
+            <label class="offers" name=""> <input type="radio" name="" id=""> <b style="font-size: 20px;"> Beta Offer </b> <span>1,500 NGN</span> <b>(7 DAYS)</b> <block><div> <i class="fa fa-check-circle"></i> Have Unlimited hearts for a whole week</div></block></label>
+            <label class="offers" name=""> <input type="radio" name="" id=""> <b style="font-size: 20px;"> Magma Offer </b> <span>3,000 NGN</span> <b>(14 DAYS)</b> <block> <div> <i class="fa fa-check-circle"></i> Have Unlimited hearts for two weeks</div> <div> <i class="fa fa-check-circle"></i> Track your progress</div> <div> <i class="fa fa-check-circle"></i> Run ads for a week</div></block></label>
+            <label class="offers"> <input type="radio" name="" id=""> <b style="font-size: 20px;"> Gen Z Offer </b> <span>6,000 NGN</span> <b>(21 DAYS)</b> <block><div><i class="fa fa-check-circle"></i> Have Unlimited hearts</div> <div><i class="fa fa-check-circle"> </i> Track your progress </div> <div><i class="fa fa-check-circle"></i> Run Ads for a week</div> <div><i class="fa fa-check-circle"></i> Gain access to GenZeal, an interactive AI you can speak with and share any amount of lecture notes with it</div> </block></label>
+            
+        </div>
+    </div>
+</div>
+
   
   <section class="lectureNote dark">
     
      
  
- <div class="signal-header smallScreen screens">
+ <div class="signal-header smallScreen screens" style="magin:5px">
      
-        <div style="display:flex;justify-content:space-between;margin:0;padding:5px 10px;">
+        <div style="display:flex;justify-content:space-between;marin:0;padding:5px 10px;align-items:center;gap:5px">
       
-      <div style="font-weight:50" class="fa fa-arrow-left"> </div>
+      <div style="font-weight:50;width:20px;height:20px;padding:10px;border-radius:50%;background:rgba(255,255,255,0.03);display:flex;justify-content:center;align-items:center" class="fa fa-arrow-left"> </div>
       
-    </div> 
-        <div class="progress learningProgress dark" style="margin-bottom:0">
-      <div ><span style="backgound:blue;opacity:0.8;display:block;margin:0;height:8px;width:0px;border-radius:1rem;display:flex;align-items:center;justify-content:space-between;padding-right:5px"><br /> <i style="font-size:13px;opacity:1;color:white" class="fa fa-circle"></i></span></div>
-      </div>
-              <div id="heart" style="background: rgba(255, 0, 0, 0.09);border: 0.5px solid rgba(255, 0, 0, 0.05);">💖 <b style="color: red;font-weight: bolder;">5</b></div>
+<div style="display:flex;gap:20px">
+              <div id="heart" style="background: rgba(255, 0, 0, 0.09);border: 0.5px solid rgba(255, 0, 0, 0.05);display:flex;align-items:center;gap:5px"> <i data-lucide="heart"  ></i> <b style="color: red;font-weight: bolder;" class="user_life"> 5</b></div>
+              
+              <div class="comment_icon" style="display:flex;align-items:center;gap:5px;">
+                <i data-lucide="message-circle-more"></i>
+                5
+              </div>
+              </div>
+              
+              
+</div>
 
+    
+        <div class="progress learningProgress dark" style="margin-bottom:0">
+      <div ><span class="dark_progress" style="backgound:blue;opacity:0.8;display:block;margin:0;height:8px;width:0px;border-radius:1rem;display:flex;align-items:center;justify-content:space-between;padding-right:5px"></span></div>
+      </div>
  </div>   
     
     
     <div class="signal-header wideScreen screens" style="display:flex;justify-content:space-between;margin:0;padding:0 10px;align-items: center;font-size: 14px;">
       
-      <div style="cursor: pointer;" class="fa fa-arrow-left" data-lucide="arrow-left"> </div>
+      <div class="fa fa-arrow-left csr_pointer" data-lucide="arrow-left"> </div>
       <div class="progress learningProgress dark" style="margin-bottom:0">
         <div  ><span class="dark_progress" style="background: blue;opacity:0.8;display:block;margin:0;height:100%;width:0px;border-radius:1rem;display:flex;align-items:center;justify-content:space-between;padding-right:5px"></span></div>
         </div>
-        <div class="heart" style="color: rgb(255, 183, 0); font-size: 14px;"> <i data-lucide="message-circle-more"></i> <h2 style="">5</h2></div>
+        <div class="heart comment_icon" style="color: rgb(255, 183, 0); font-size: 14px;"> <i data-lucide="message-circle-more"></i> <h2 style="">5</h2></div>
+        <div style="color: #ef4444;font-size: 14px;"> <i data-lucide="heart"></i> <h2 class="user_life">5</h2></div>
     </div>
     
     
@@ -1131,11 +1845,11 @@
     
     <div class="signalNote">
       
-      <div class="notes note_1" style="width: 100%;margin: 20px auto;margin-left: 40px;flex-grow: 1;">
+      <div class="notes note_1" style="width: 100%;margin-left: 0px;flex-grow: 1;">
 
         <div style="magin: 40px auto;">
         
-         <div style="margin: auto 40px;">
+         <div style="margin: auto 10px;">
             <div style="display: flex;gap: 10px;align-items: center;">
               <div style="background: #6366f1;width: 6px;height: 24px;border-radius: 4px;box-shadow: 0px 0px 10px #6366f1;"></div>
               <div style="color: #6366f1;letter-spacing: 2px;font-weight: 800;font-size: 0.7rem;text-transform: uppercase;"><h2>GREETINGS</h2></div>
@@ -1145,12 +1859,12 @@
             <h1 style="font-family: 'inter', sans-serif;">What is a signal</h1>
         </div>
 
-         <div style="margin: auto 40px; display: flex;flex-direction: column;gap: 10px;">
-          <p style="font-weight: 300;">
+         <div class="notes_paragraph" style="magin: auto 40px; display: flex;flex-direction: column;gap: 10px;padding:5px;colr:black;;">
+          <p style="font-weght: 300;">
             Signal is an abstraction of any measurable quantity represented as a <i>function</i> of an independent variables such as space, time, etc.
           </p>
           
-          <div class="dark_list_or_important" style="backgrund: #16122a;padding: 24px;border-radius: 16px;margin: 30px 32px;border: 1px solid rgba(255, 255, 255, 0.05);">
+          <div class="dark_list_or_important" style="backgrund: #16122a;padding: 14px;border-radius: 16px;mrgin: 30px 32px;border: 1px solid rgba(255, 255, 255, 0.05);">
             <p style="font-weight: 300;color: #abbeda;">Signals are written in the form <b style="color:#a855f7; font-weight: bolder; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">x(t)</b>, where:</p>
             
             <div style="display: flex;gap: 10px;margin-bottom: 8px;font-family: 'Courier New', Courier, monospace;"><b style="color: #a855f7;font-weight: bolder;">x</b> = Signal value</div>
@@ -1174,7 +1888,7 @@
 
 
 <p style="padding:16px;margin-top:0 ;font-size: 17px;background: rgba(255, 255, 255, 0.02);border-radius: 12px;border: 1px solid #abbeda;">
-  <i class="fa fa-times-circle" style="color: #cd0067;"></i> <span >Current is not a signal because the current (which is the quantity) is <i >constant</i> at every point in time.</span>
+  <i class="fa fa-times-circle" style="color: #cd0067;"></i> <span >Direct Current is not a signal because the current (which is the quantity) is <i >constant</i> at every point in time.</span>
 </p>
 
                 </div>
@@ -1245,8 +1959,8 @@
   <br />
   <!-- quiz question -->
   
-  <div style="display: flex;width: 100%;justify-content: center;">
-  <div class="quizCont dark_quiz" style="padding:24px; backgound:ghostwhite;border-radius:10px;oveflow:scroll;width: 50vw;">
+
+  <div class="quizCont dark_quiz" style="padding:5px 15px 15px 15px; backgound:ghostwhite;border-radius:10px;oveflow:scroll;">
     
     <div class="subQuiz called_subQuiz1" position="0">
       <span style="display:none" class="id">0</span>
@@ -1292,16 +2006,15 @@
   
   
   </div>
-  </div>
+  
 
 </div>
 
       
-      <div class="notes note_2" style="font-family: 'Times New Roman';">
+      <div class="notes note_2" style="font-family: 'Times New Roman';width:100%;">
         
-              <div style="color: #6366f1;letter-spacing: 2px;font-weight: 800;font-size: 0.7rem;text-transform: uppercase;font-family: 'inter', sans-serif;"><h1>Types Of Signals</h1></div>
-
-          <div style="background: rgba(30, 16, 55, 0.6);backdrop-filter: blur(10px); padding: 24px;border-radius: 16px;margin: 40px 32px;border: 1px solid rgba(255, 255, 255, 0.05);">
+            <h1 style="font-family: 'inter', sans-serif;margin:10px;color:#6366f1;">Types Of Signal</h1>
+          <div class="notes_paragraph" style="background: rgba(30, 16, 55, 0.6);backdrop-filter: blur(10px); padding: 10px;border-radius: 16px;margin: 30px 5px 30px 5px;border: 1px solid rgba(255, 255, 255, 0.05);">
         
         <p style="line-height:25px;padding:0px 15px;color: #abbeda;">1 <b style="color: b; letter-spacing: 2px;color: white;"> Single variable:-</b> It depends on <i >one</i> variable only. It is also a function of one variable, e.g f(x), f(t), e.t.c </p>
         
@@ -1317,14 +2030,14 @@
       
       </div>      
 
-      <div class="notes note_3" style="font-family: 'Times New Roman';">
+      <div class="notes note_3" style="font-family: 'Times New Roman';width:100%;">
         
-              <div style="color: #6366f1;letter-spacing: 2px;font-weight: 800;font-size: 0.7rem;text-transform: uppercase;font-family: 'inter', sans-serif;"><h1>Classification Of Signals</h1></div>
+              <div style="color: #6366f1;letter-spacing: 2px;font-weght: 800;fnt-size: 0.7rem;text-transform: uppecase;font-family: 'inter', sans-serif;margin:10px;"><h1>Classification Of Signals</h1></div>
      
-     <div style="padding: 0 15px;">   
-        <p class="listing-explanation" style="line-height:25px;padding:5px 15px"><b style="opcity:0.7;fot-size:16.5px">1. Continous Time Signal:-</b> These Signals are present for <b>all</b> instance in time and space. E.g - sine signals, cosine signals, triangular waveform, rectangular waveform, e.t.c.</p>
+     <div class="notes_paragraph" style="padding:5px">   
+        <p class="listing-explanation" style="line-height:25px;padding:5px 15px;font-size:16px"><b style="opcity:0.7;fot-size:16.5px;color:#6366f1">1. Continous Time Signal:-</b> These Signals are present for <b>all</b> instance in time and space. E.g - sine signals, cosine signals, triangular waveform, rectangular waveform, e.t.c.</p>
       
-      <div style="padding:10px;height:80px;position:relative;margin-top:-10px">  
+      <div style="pading:10px;height:80px;position:relative;margin-top:-10px">  
       
       <div style="color:grey;font-size:13px">C.T.S</div>
       
@@ -1349,7 +2062,7 @@
       <text x="215" y="90" style="stroke-width:2;stroke:#abbeda;fill:none">0</text>
       
       
-       <text x="361" y="90" style="stroke-width:2;stroke:#1a1a1a;fill:none;">+∞</text>     
+       <text x="361" y="90" style="stroke-width:2;stroke:#abbeda;fill:none;">+∞</text>     
         
 
  
@@ -1364,7 +2077,7 @@
 
 <br />
 
-<div style="line-height:20px;font-size:14px;font-weight: 800;color: grey;">The simulation above shows how the signal (orange coloured circle) moves <span style="text-decoration:underline">continously</span> from the starting point to the end point</div>
+<div style="line-height:20px;font-size:14px;font-weght: 800;color: grey;">The simulation above shows how the signal (orange coloured circle) moves <span style="text-decoration:underline">continously</span> from the starting point to the end point</div>
 
 
      </div>
@@ -1372,7 +2085,7 @@
   </div>
   
   <div style="margin-top:180px"  > 
-      <p class="listing-explanation" style="line-height:25px;padding:5px 15px;"><b style="opcity:0.7;fnt-size:16.5px">2. Discrete Time Signal:-</b> These Signals are present at a <b>specific</b> point in time and space. E.g - sine signals, cosine signals, triangular waveform, rectangular waveform, e.t.c.</p>    
+      <p class="listing-explanation" style="line-height:25px;padding:5px 15px;font-size:16px"><b style="opcity:0.7;fnt-size:16.5px;color:#6366f1">2. Discrete Time Signal:-</b> These Signals are present at a <b>specific</b> point in time and space. E.g - sine signals, cosine signals, triangular waveform, rectangular waveform, e.t.c.</p>    
       
            <div style="padding:10px;height:80px;position:relative;margin-top:-10px">  
       
@@ -1417,7 +2130,7 @@
       <text x="325" y="95" style="stroke-width:2;stroke:#abbeda;fill:none">+2</text>
       
       
-       <text x="381" y="95" style="stroke-width:2;stroke:#1a1a1a;fill:none;">t n</text>     
+       <text x="381" y="95" style="stroke-width:2;stroke:#abbeda;fill:none;">t n</text>     
         
 
  
@@ -1433,7 +2146,7 @@
 
 <br />
 
-<div style="line-height:20px;font-size:14px;font-weight: bolder;color: grey;">The simulation above shows how the signal (orange coloured circle) moves <span style="text-decoration:underline">discretely</span> at a specific instance of time</div>
+<div style="line-height:20px;font-size:14px;font-weght: bolder;color: grey;">The simulation above shows how the signal (orange coloured circle) moves <span style="text-decoration:underline">discretely</span> at a specific instance of time</div>
 
 
      </div>
@@ -1444,10 +2157,10 @@
      
       </div>  
       
-      <div class="notes note_4" style="padding:10px;font-family: 'Times New Roman';">
+      <div class="notes note_4" style="paddling:10px;font-family: 'Times New Roman';">
         
-              <div style="color: #6366f1;letter-spacing: 2px;font-weight: 800;font-size: 0.7rem;text-transform: uppercase;margin: 30px;font-family: 'inter', sans-serif;"><h1>Systems</h1></div>
-     <div style="overflow: hidden;margin: 40px 40px;">
+              <div style="color: #6366f1;letter-spacing: 2px;text-transform: uppercase;margin: 10px;font-family: 'inter', sans-serif;"><h1>Systems</h1></div>
+     <div class="notes_paragraph" style="overflow: hidden; padding:5px">
    
         <p style="line-height:25px"><b style="opacity:0.7">System</b> is an abstraction of anything (e.g devices) that takes an input signal, operates on it and produces an output signal</p>
         
@@ -1455,11 +2168,11 @@
 <br />
 
 <div class="dark_list_or_important" style="padding: 24px;backgrund: #16122a;backdrop-filter: blur(10px);border: 1px solid rgba(255, 255, 255, 0.05);border-radius: 10px;">
-<p style="color: #abbeda;">1. <span style="color:hite;font-weight: bolder;">Continous Time System:- </span>It operates on continous time signal</p>
+<p style="color: #abbeda;">1. <span style="color:#6366f1;font-weight: bolder;">Continous Time System:- </span>It operates on continous time signal</p>
 
-<p style="color: #abbeda;">2. <span style="color: wite;font-weight: bolder;">Discrete Time System:-</span> It operates on discrete time signal </p>
+<p style="color: #abbeda;">2. <span style="color:#6366f1;font-weight: bolder;">Discrete Time System:-</span> It operates on discrete time signal </p>
 
-<p style="color: #abbeda;">3. <span style="color: whte;font-weight: bolder;">Linear Time Invariance (LTI) System:-</span> It combines the properties of linearity and time invariance </p>
+<p style="color: #abbeda;">3. <span style="color:#6366f1;font-weight: bolder;">Linear Time Invariance (LTI) System:-</span> It combines the properties of linearity and time invariance </p>
 </div>
 
 <br />
@@ -1471,11 +2184,11 @@
       
       <div class="notes note_5" style="padding:10px;font-family: 'Times New Roman';overflow-x: hidden;">
        
-              <div style="color: #6366f1;letter-spacing: 2px;font-size: 0.7rem; font-weight: 800;text-transform: uppercase;margin: 30px;">
+              <div style="color: #6366f1;letter-spacing: 2px;text-transform: uppercase;margin: 10px;">
                 <h1 style="font-family: 'inter', sans-serif;">LTI Systems</h1>
 </div>
         
-      <div style="margin: 40px 40px;overflow: hidden;">
+      <div style="padding:15px;overflow: hidden;">
         <p style="line-height:25px;overflow: hidden;"><b style="">LTI</b> systems are systems that combines the properties of <span class="dark_highlight" style="padding: 5px;"> linearity</span> and <span class="dark_highlight" style="backgound:#676bbc;color:; padding: 5px;">time invariance</span>.
         
         <p> <span style="text-decoration:underline;font-weight:bolder" >Linearity</span> in the sense that it allows an additional signal to flow in at the input, and produces an additional signal at the output. <br />
@@ -1585,11 +2298,11 @@
             <div class="notes note_6" style="padding:10px;font-family: 'Times New Roman';overflow-x: hidden;">
             
    
-              <div style="margin: 40px 40px;">
+              <div style="padding:15px">
     
               <div style="color: #6366f1;letter-spacing: 2px;font-size: 0.7rem; font-weight: 800;text-transform: uppercase;"><h1 style="font-family: 'inter', sans-serif;">Time Invariance</h1></div>
       
-      <p>LTI systems has the property of time invariance in the sense that if the <span class="dark_highlight" style="backgound:#05d5f5">Input signal is delayed by a time ¥,</span> then <span class="dark_highlight style="backgound:#05d5f5">the output signal is also delayed by that same time ¥</span>.</p>
+      <p>LTI systems has the property of time invariance in the sense that if the <span class="dark_highlight" style="backgound:#05d5f5">Input signal is delayed by a time ¥,</span> then <span class="dark_highlight" style="backgound:#05d5f5">the output signal is also delayed by that same time ¥</span>.</p>
     
      <div><b style="opacity:0.7;font-size:13px;marin-top:0">
  Original Signal</b>
@@ -1656,10 +2369,11 @@
         </div>
         
             </div>
-      
-     <div class="notes quiz " style="font-family: 'Times New Roman';position: relative;">
+    
+    
+        <div class="notes quiz " style="font-family: 'Times New Roman';position: relative;">
   
-              <div style="color: #6366f1;letter-spacing: 2px;font-weight: 800;font-size: 0.7rem;text-transform: uppercase;font-family: 'inter', sans-serif;"><h2>Ascend IQ</h2></div>
+              <div style="color: #6366f1;letter-spacing: 2px;font-weight: 800;font-size: 0.7rem;text-transform: uppercase;"><h2>Ascend IQ</h2></div>
  
  <br />
  <div style="display:flex;justify-content:space-between;margin-top:0;align-items:center;padding: 0 20px;" >
@@ -1682,8 +2396,8 @@
   <br />
   <!-- quiz question -->
   
-  <div style="display: flex;width: 100%;justify-content: center;">
-  <div class="quizCont dark_quiz" style="padding:24px; backgound:ghostwhite;border-radius:10px;oveflow:scroll;width: 50vw;">
+
+  <div class="quizCont dark_quiz" style="padding:5px 15px 15px 15px; backgound:ghostwhite;border-radius:10px;oveflow:scroll;">
     
     <div class="subQuiz called_subQuiz1" position="0">
       <span style="display:none" class="id">0</span>
@@ -1729,9 +2443,10 @@
   
   
   </div>
-  </div>
+  
 
 </div>
+  
 
       <div class="notes note_7" style="padding:10px;font-family: 'Times New Roman';">
              <p style="margin:30px" id="flash_card"><h2 style="color:#6366f1; font-family: 'inter', sans-serif;">Flash Cards</h2></p> 
@@ -1762,11 +2477,83 @@
         </div>
             </div>
       
+             <div class=" comment_container">
+        
+        <div class="comment_sub_container">
+
+            <div class="comment_header">
+                <i class="comment_container_back fa fa-chevron-left"></i>
+                <h2>What Your Peer Says</h2>
+                <i data-lucide="lists"></i>
+            </div>
+
+            <div class="comment_chat_block">
+
+                <div class="user_comment_container">
+
+                    <div class="user_comment">
+                    <div class="user_commentPix">
+
+                    </div>
+
+                        <div class="user_commentTxt">
+                            <b>SamzTech_2053 <span style="color: grey;font-size: 12px;">12:20 AM</span></b>
+
+                            This is the best tutor app I have ever used. Very precised!
+                        </div>
+                        </div>
+
+                        <div class="user_comment_btns">
+                            <i class="comment_like" data-lucde="thumbs-up"></i>
+                            <i data-lucide="thumbs-down"></i>
+                            <i data-lucide="message-circle-more"></i>
+                            <span>10 replies</span>
+                        </div>
+
+                </div>
+
+                <div class="user_comment">
+                    <div class="user_commentPix">
+
+                    </div>
+
+                        <div class="user_commentTxt">
+                            <b>Aura_20@3 <span style="color: grey;font-size: 12px;">12:09 AM</span></b>
+
+                            Remember Signal must be a function of a variable.
+                        </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="comment_txtarea_container">
+
+                <div class="comment_files">
+                    <i data-lucide="plus" style="color: white;">
+                        
+                    </i>
+                </div>
+
+                <textarea name="comment_txtarea" class="comment_txtarea" placeholder="share your thought..">
+
+                </textarea>
+
+                <div class="comment_send_btn">
+                    <i data-lucide="send">send</i>
+                </div>
+
+            </div>
+
+        </div>
+
+      </div>
 
 </div>
     
       
-<div class="back_button note_nav" style="cursor: pointer;" data-lucide="chevron-left" >
+<div class="back_button note_nav csr_pointer" data-lucide="chevron-left" >
   
 </div>
 
@@ -1774,6 +2561,8 @@
     
     
     <div class="noteFooter">
+      
+      <div style="padding:10px;width:250px;border-radius:8px;text-align:center;background:#1a1a1a;margin:10px;opacity:0.7;color:white" class="back_button" ><span style="opacity:1;font-weight:bolder;font-family:'Times New Roman'">Back</span></div>
       
       <div style="padding:10px;width:250px;border-radius:8px;text-align:center;background:#9333ea;margin:10px;opacity:0.7;color:white" class="contin" ><span style="opacity:1;font-weight:bolder;font-family:'Times New Roman'">Continue</span></div>
       
@@ -1934,7 +2723,7 @@
       <br />
       
   <div >
-    <div style="color:green;padding:15px;border-radius:20px;background:white;">
+    <div class="draggable_option_container" style="color:green;padding:15px;border-radius:20px;">
       <div class="draggable_option"  draggable="true" style="display:inline-block">Abstraction</div>
        <div class="draggable_option" style="margin-left:5px;display:inline-block" draggable="true">Function</div>
         <div class="draggable_option" style="margin-left:5px;display:inline-block;" draggable="true">Variable</div>
@@ -1948,12 +2737,12 @@
     <span style="padding:8px;border-radius:10px;background:ghostwhite;font-size:14px;box-shadow:2px 2px 5px green">Clear</span></div>
   </div> 
 
-<div class="motivation_container" style="padding:10px;background:#f32553;border-radius:10px;display:none">
+<div class="motivation_container" style="display: flex; flex-direction: column;gap: 10px; padding:10px;background: #9333eaff;border-radius:10px;display:none;width: 300px;margin: auto;">
   
   <div class="motivation" style="font-weight:bold;text-align:center;font-size:19px;color:ghostwhite">You're on fire</div>
   <div style="text-align:center;font-size:20px">🔥🔥🔥</div>
   
-  <div style="text-align:center;margin-top:5px;background:#fde;padding:10px;border-radius:10px;box-shadow:1px 2px 3px gren;clor:white;font-weight:bold" class="motivation_contin">Next</div>
+  <div style="text-align:center;width: 250px; margin:auto;background:#abbeda;color: black; padding:10px;border-radius:10px;box-shadow:1px 2px 3px gren;clor:white;font-weight:bold" class="motivation_contin">Next</div>
   
   
 </div>
@@ -1976,23 +2765,34 @@
       
     
      
-   <div class="signal-header smallScreen screens">
+ <div class="signal-header smallScreen screens" style="magin:5px">
      
-        <div style="display:flex;justify-content:space-between;margin:0;padding:10px;">
+        <div style="display:flex;justify-content:space-between;marin:0;padding:5px 10px;align-items:center;gap:5px">
       
-      <div style="font-weight:50" class="fa fa-arrow-left"> </div>
-      <div style="width:40px;margin-right:10px">💖<span > 25</span></div>
+      <div style="font-weight:50;width:20px;height:20px;padding:10px;border-radius:50%;background:rgba(255,255,255,0.03);display:flex;justify-content:center;align-items:center" class="fa fa-arrow-left"> </div>
       
-    </div> 
+<div style="display:flex;gap:20px">
+              <div id="heart" style="background: rgba(255, 0, 0, 0.09);border: 0.5px solid rgba(255, 0, 0, 0.05);display:flex;align-items:center;gap:5px"> <i data-lucide="heart"  ></i> <b style="color: red;font-weight: bolder;"> 5</b></div>
+              
+              <div style="display:flex;align-items:center;gap:5px;">
+                <i data-lucide="message-circle-more"></i>
+                5
+              </div>
+              </div>
+              
+              
+</div>
+
+    
         <div class="progress learningProgress dark" style="margin-bottom:0">
-      <div ><span style="background:blue;opacity:0.8;display:block;margin:0;height:17px;width:0px;border-radius:1rem;display:flex;align-items:center;justify-content:space-between;padding-right:5px"><br /> <i style="font-size:13px;opacity:1;color:white" class="fa fa-circle"></i></span></div>
+      <div ><span class="dark_progress" style="backgound:blue;opacity:0.8;display:block;margin:0;height:8px;width:0px;border-radius:1rem;display:flex;align-items:center;justify-content:space-between;padding-right:5px"></span></div>
       </div>
  </div>   
     
     
   <div class="signal-header wideScreen screens" style="display:flex;justify-content:space-between;margin:0;padding:0 10px;align-items: center;font-size: 14px;">
       
-      <div style="cursor: pointer;" class="fa fa-arrow-left" data-lucide="arrow-left"> </div>
+      <div class="fa fa-arrow-left csr_pointer" data-lucide="arrow-left"> </div>
       <div class="progress learningProgress dark" style="margin-bottom:0">
         <div  ><span class="dark_progress" style="background: blue;opacity:0.8;display:block;margin:0;height:100%;width:0px;border-radius:1rem;display:flex;align-items:center;justify-content:space-between;padding-right:5px"></span></div>
         </div>
@@ -2007,18 +2807,18 @@
         
         <div class="notes note_1" style="width: 100%;margin: 20px auto;margin-left: 40px;flex-grow: 1;">
 
-   <p style="line-height:25px;padding:15px">In signals and system, some factors are considered to help us design a better sysyem. Let's take a look at them 
+   <p class="notes_paragraph" style="line-height:25px;pading:15px">In signals and system, some factors are considered to help us design a better sysyem. Let's take a look at them 
         
 
 </p>
 
 <br />
 
-<div style="padding:5px 10px">
-<div style="padding:5px 10px;backround:#fde;borde-top:10px solid #cd0067">
+<div class="notes_paragraph" style="pading:5px 10px">
+<div class="notes_paragraph" style="pading:5px 10px;backround:#fde;borde-top:10px solid #cd0067">
   <h3 style="ext-decoration:underline;coor:white;margin-top:0;color: #6366f1;font-family: 'inter',sans-serif;">Factors Considered In Signals And Systems</h3>
   
-          <div class="dark_list_or_important" style="backgrund: #16122a;padding: 24px;border-radius: 16px;margin: 30px 32px;border: 1px solid rgba(255, 255, 255, 0.05);">
+          <div class="notes_paragraph dark_list_or_important" style="backgrund: #16122a;padding: 14px;border-radius: 16px;marin: 30px 32px;border: 1px solid rgba(255, 255, 255, 0.05);">
 
   
   <div style="display:flex;jusify-content:space-between;padding: 8px;gap:10px">
@@ -2064,11 +2864,11 @@
       
 
       
-      <div class="notes note_2" style="margin: 20px auto; margin-left: 40px;width: 100%;flex-grow: 1; ">
+      <div class="notes note_2" style="width: 100%;flex-grow: 1; ">
         
         <p><h2 class="dark_header" style="font-family: 'inter',sans-serif;">Types Of Problems In Signals And Systems</h2></p>
         <br>
-                  <div class="dark_list_or_important" style="backgrund: #16122a;padding: 24px;border-radius: 16px;margin: 30px 32px;border: 1px solid rgba(255, 255, 255, 0.05);">
+                  <div class=" notes_paragraph dark_list_or_important" style="backgrund: #16122a;padding: 14px;border-radius: 16px;mrgin: 30px 32px;border: 1px solid rgba(255, 255, 255, 0.05);">
 
 
         <p style="line-height:25px">•<b style="opaclity:0.7"> Analysis Problem:-</b> It involves checking the expected response. In this problem, we focus on the <span class="dark_highlight" style="padding:3px;" >output signal</span> </p>
@@ -2109,11 +2909,13 @@
       
     </div>
     
-    <div class="back_button note_nav" style="cursor: pointer;" data-lucide="chevron-left" >
+    <div class="back_button note_nav csr_pointer" data-lucide="chevron-left" >
   
 </div>
 
-     <div class="noteFooter">
+    <div class="noteFooter">
+      
+      <div style="padding:10px;width:250px;border-radius:8px;text-align:center;background:#1a1a1a;margin:10px;opacity:0.7;color:white" class="back_button" ><span style="opacity:1;font-weight:bolder;font-family:'Times New Roman'">Back</span></div>
       
       <div style="padding:10px;width:250px;border-radius:8px;text-align:center;background:#9333ea;margin:10px;opacity:0.7;color:white" class="contin" ><span style="opacity:1;font-weight:bolder;font-family:'Times New Roman'">Continue</span></div>
       
@@ -2134,6 +2936,7 @@
       
       
     </div>
+    
     
    <div id="quizzess" style="display:none">
      
@@ -2274,7 +3077,7 @@
       <br />
       
   <div >
-    <div style="color:green;padding:15px;border-radius:20px;background:white;">
+    <div class="draggable_option_container" style="color:green;padding:15px;border-radius:20px;background:white;">
       <div class="draggable_option"  draggable="true" style="display:inline-block">Abstraction</div>
        <div class="draggable_option" style="margin-left:5px;display:inline-block" draggable="true">Function</div>
         <div class="draggable_option" style="margin-left:5px;display:inline-block;" draggable="true">Variable</div>
@@ -2285,15 +3088,15 @@
   <br />
   
   <div style="text-align:right;" class="draggable_option_Clear">
-    <span style="padding:8px;border-radius:10px;background:ghostwhite;font-size:14px;box-shadow:2px 2px 5px green">Clear</span></div>
+    <span class="fa fa-retry" style="padding:8px;border-radius:10px;background:ghostwhite;font-size:14px;box-shadow:2px 2px 5px green"></span></div>
   </div> 
 
-<div class="motivation_container" style="padding:10px;background:#f32553;border-radius:10px;display:none">
+<div class="motivation_container" style="display: flex; flex-direction: column;gap: 10px; padding:10px;background: #9333eaff;border-radius:10px;display:none;width: 300px;margin: auto;">
   
   <div class="motivation" style="font-weight:bold;text-align:center;font-size:19px;color:ghostwhite">You're on fire</div>
   <div style="text-align:center;font-size:20px">🔥🔥🔥</div>
   
-  <div style="text-align:center;margin-top:5px;background:#fde;padding:10px;border-radius:10px;box-shadow:1px 2px 3px gren;clor:white;font-weight:bold" class="motivation_contin">Next</div>
+  <div style="text-align:center;width: 250px; margin:auto;background:#abbeda;color: black; padding:10px;border-radius:10px;box-shadow:1px 2px 3px gren;clor:white;font-weight:bold" class="motivation_contin">Next</div>
   
   
 </div>
@@ -2317,40 +3120,51 @@
       
 
     
-   <div class="signal-header smallScreen screens">
+ <div class="signal-header smallScreen screens" style="magin:5px">
      
-        <div style="display:flex;justify-content:space-between;margin:0;padding:10px;">
+        <div style="display:flex;justify-content:space-between;marin:0;padding:5px 10px;align-items:center;gap:5px">
       
-      <div style="font-weight:50" class="fa fa-arrow-left"> </div>
-      <div style="width:40px;margin-right:10px">💖<span > 5</span></div>
+      <div style="font-weight:50;width:20px;height:20px;padding:10px;border-radius:50%;background:rgba(255,255,255,0.03);display:flex;justify-content:center;align-items:center" class="fa fa-arrow-left"> </div>
       
-    </div> 
+<div style="display:flex;gap:20px">
+              <div id="heart" style="background: rgba(255, 0, 0, 0.09);border: 0.5px solid rgba(255, 0, 0, 0.05);display:flex;align-items:center;gap:5px"> <i data-lucide="heart"  ></i> <b style="color: red;font-weight: bolder;"> 5</b></div>
+              
+              <div style="display:flex;align-items:center;gap:5px;">
+                <i data-lucide="message-circle-more"></i>
+                5
+              </div>
+              </div>
+              
+              
+</div>
+
+    
         <div class="progress learningProgress dark" style="margin-bottom:0">
-      <div ><span style="background:blue;opacity:0.8;display:block;margin:0;height:17px;width:0px;border-radius:1rem;display:flex;align-items:center;justify-content:space-between;padding-right:5px"><br /> <i style="font-size:13px;opacity:1;color:white" class="fa fa-circle"></i></span></div>
+      <div ><span class="dark_progress" style="backgound:blue;opacity:0.8;display:block;margin:0;height:8px;width:0px;border-radius:1rem;display:flex;align-items:center;justify-content:space-between;padding-right:5px"></span></div>
       </div>
  </div>   
     
     
-    <div class="signal-header wideScreen screens" style="display:flex;justify-content:space-between;margin:0;padding:0 10px;align-items: center;">
+    <div class="signal-header wideScreen screens" style="display:flex;justify-content:space-between;margin:0;padding:0 10px;align-items: center;font-size: 14px;">
       
-      <div style="font-weght:50" class="fa fa-arrow-left"> </div>
+      <div class="fa fa-arrow-left csr_pointer" data-lucide="arrow-left"> </div>
       <div class="progress learningProgress dark" style="margin-bottom:0">
-        <div ><span style="background:blue;opacity:0.8;display:block;margin:0;height:17px;width:0px;border-radius:1rem;display:flex;align-items:center;justify-content:space-between;padding-right:5px"><br /> <i style="font-size:13px;opacity:1;color:white" class="fa fa-circle"></i></span></div>
+        <div  ><span class="dark_progress" style="background: blue;opacity:0.8;display:block;margin:0;height:100%;width:0px;border-radius:1rem;display:flex;align-items:center;justify-content:space-between;padding-right:5px"></span></div>
         </div>
-        <div class="heart" style="">💖 <h2 style="color: red;font-weight: bolder;">5</h2></div>
+        <div class="heart" style="color: rgb(255, 183, 0); font-size: 14px;"> <i data-lucide="message-circle-more"></i> <h2 style="">5</h2></div>
     </div>
     
     
     <div class="signalNote">
       
-      <div class="notes note_1" style="padding:10px;margin-left:10px">
+      <div class="notes note_1" style="width:100%">
    
-   <h2 style="color:#4a1ac5">Classification Of Signals</h2>     
+              <div style="color: #6366f1;letter-spacing: 2px;font-weight: 800;font-size: 0.7rem;text-transform: uppercase;font-family: 'inter', sans-serif;"><h1>Types Of Signals</h1></div>
   
 
 <br />
 
-   <div >   
+   <div class="notes_paragraph">   
         <p style="line-height:25px"><b style="opcity:0.7;font-size:16.5px">1. Analog Signal:-</b> This is a continous time signal. It ranges from -∞ ≤ t ≤ +∞</p>
       
 
@@ -2416,7 +3230,7 @@
 
             <div class="notes note_3" style="padding:10px;margin-left:10px;">
               
-<h2 style="color:#4a1ac5">Time Reversal</h2>              
+<h2 style="color:#6366f1">Time Reversal</h2>              
         
         <p> I will explain this in a layman way so, read carefully. <br /> </p>
    <br />     
@@ -2462,9 +3276,9 @@
       <text x="285" y="90" style="stroke-width:2;stroke:#abbeda;fill:none">5</text>
       
       
-       <text x="351" y="90" style="stroke-width:2;stroke:#1a1a1a;fill:none;">10</text>     
-       <text x="410" y="75" style="stroke-width:2;stroke:#1a1a1a;fill:none;">t</text>     
-       <text x="150" y="125" style="stroke-width:1;stroke:#1a1a1a;fill:none;">Original Signal x(t)</text>     
+       <text x="351" y="90" style="stroke-width:2;stroke:#abbeda;fill:none;">10</text>     
+       <text x="410" y="75" style="stroke-width:2;stroke:#abbeda;fill:none;">t</text>     
+       <text x="150" y="125" style="stroke-width:1;stroke:#abbeda;fill:none;">Original Signal x(t)</text>     
         
 
  
@@ -2480,7 +3294,7 @@
 <p> We take all the time scale and multiply them by μ which is -1.</p>
 
 <p >
-  <div style="padding:15px;border-left:3px solid grey;background:#eee"> <p >at time t = 0, the reversed time becomes 0 × -1 = 0;</p> 
+  <div class="dark_list_or_important" style="padding:15px;border-left:3px solid grey;background:#eee"> <p >at time t = 0, the reversed time becomes 0 × -1 = 0;</p> 
 <p> at time t = 5, the reversed time becomes 5 × -1 = -5</p>
 <p> at time t = 10, the reversed time becomes 10 × -1 = -10</p>
 </div></p>
@@ -2508,9 +3322,9 @@
       <text x="140" y="90" style="stroke-width:2;stroke:#abbeda;fill:none">- 5</text>
       
       
-       <text x="59" y="90" style="stroke-width:2;stroke:#1a1a1a;fill:none;">-10</text>     
-       <text x="410" y="75" style="stroke-width:2;stroke:#1a1a1a;fill:none;">t</text>     
-       <text x="150" y="125" style="stroke-width:1;stroke:#1a1a1a;fill:none;">Time reversed Signal x(-t)</text>     
+       <text x="59" y="90" style="stroke-width:2;stroke:#abbeda;fill:none;">-10</text>     
+       <text x="410" y="75" style="stroke-width:2;stroke:#abbeda;fill:none;">t</text>     
+       <text x="150" y="125" style="stroke-width:1;stroke:#abbeda;fill:none;">Time reversed Signal x(-t)</text>     
         
 
  
@@ -2582,8 +3396,8 @@
       <text x="304" y="90" style="stroke-width:2;stroke:#abbeda;fill:none"> 2</text>
       
       
-       <text x="410" y="75" style="stroke-width:2;stroke:#1a1a1a;fill:none;">t</text>     
-       <text x="150" y="125" style="stroke-width:1;stroke:#1a1a1a;fill:none;"> Signal x(t)</text>     
+       <text x="410" y="75" style="stroke-width:2;stroke:#abbeda;fill:none;">t</text>     
+       <text x="150" y="125" style="stroke-width:1;stroke:#abbeda;fill:none;"> Signal x(t)</text>     
         
 
  
@@ -2629,8 +3443,8 @@
       <text x="304" y="90" style="stroke-width:2;stroke:#abbeda;fill:none"> 2</text>
       
       
-       <text x="410" y="75" style="stroke-width:2;stroke:#1a1a1a;fill:none;">t</text>     
-       <text x="150" y="125" style="stroke-width:1;stroke:#1a1a1a;fill:none;">Time reversed Signal x(-t)</text>     
+       <text x="410" y="75" style="stroke-width:2;stroke:#abbeda;fill:none;">t</text>     
+       <text x="150" y="125" style="stroke-width:1;stroke:#abbeda;fill:none;">Time reversed Signal x(-t)</text>     
         
 
  
@@ -2648,7 +3462,9 @@
     
     <div class="noteFooter">
       
-      <div style="padding:10px;width:250px;border-radius:8px;text-align:center;background:blue;margin:10px;opacity:0.7;color:white" class="contin" ><span style="opacity:1;font-weight:bolder;font-family:'Times New Roman'">Continue</span></div>
+      <div style="padding:10px;width:250px;border-radius:8px;text-align:center;background:#1a1a1a;margin:10px;opacity:0.7;color:white" class="back_button" ><span style="opacity:1;font-weight:bolder;font-family:'Times New Roman'">Back</span></div>
+      
+      <div style="padding:10px;width:250px;border-radius:8px;text-align:center;background:#9333ea;margin:10px;opacity:0.7;color:white" class="contin" ><span style="opacity:1;font-weight:bolder;font-family:'Times New Roman'">Continue</span></div>
       
       <div style="padding:10px;width: 250px;;border-radius:8px;text-align:center;background:green;margin:10px;opacity:0.7;color:white;display:none" class="nextQuiz" location="called_subQuiz1" ><span style="opacity:1;font-weight:bolder;font-family:'Times New Roman'">Next</span></div>     
       
@@ -2667,6 +3483,7 @@
       
       
     </div>
+    
     
    <div id="quizzess" style="display:none">
      
@@ -2821,16 +3638,15 @@
     <span style="padding:8px;border-radius:10px;background:ghostwhite;font-size:14px;box-shadow:2px 2px 5px green">Clear</span></div>
   </div> 
 
-<div class="motivation_container" style="padding:10px;background:#f32553;border-radius:10px;display:none">
+<div class="motivation_container" style="display: flex; flex-direction: column;gap: 10px; padding:10px;background: #9333eaff;border-radius:10px;display:none;width: 300px;margin: auto;">
   
   <div class="motivation" style="font-weight:bold;text-align:center;font-size:19px;color:ghostwhite">You're on fire</div>
   <div style="text-align:center;font-size:20px">🔥🔥🔥</div>
   
-  <div style="text-align:center;margin-top:5px;background:#fde;padding:10px;border-radius:10px;box-shadow:1px 2px 3px gren;clor:white;font-weight:bold" class="motivation_contin">Next</div>
+  <div style="text-align:center;width: 250px; margin:auto;background:#abbeda;color: black; padding:10px;border-radius:10px;box-shadow:1px 2px 3px gren;clor:white;font-weight:bold" class="motivation_contin">Next</div>
   
   
 </div>
-
 
     
     
@@ -2843,12 +3659,16 @@
    </div>
     
   </section>
+
+ 
    
   <section class="settings">
     <div class="toggle_light ">
-
+      
     </div>
   </section>
+
+
   
   </main>
   
@@ -2857,22 +3677,67 @@
   <script >
     
 
-    let time =10000;
+    
+
+ $(".screens").hide()    
+    $(document).ready(()=>{
+
+
+      
+let time =10000;
     let correct_counter = 0;
     let index;
     let subQuiz_location;
     let upArrow = $(".lecture_wrapper").find(".lec");
     let upArrow_answered = true;
-    let sublec_json = ["More On Signals", "Classification Of Signals","Odd Signals"];
+    let sublec_json = ["More On Signals", "Classes Of Signals","Odd Signals"];
     let lightState = "light";
     
-    $(".coursesCont").slideUp()
+      
+let canvas;
+let notes_counter =0;
+let notes_length = $(".notes").length;
+let reading_percentage = $(".reading_percentage");
+      let popup = $(".popup");
+      
+      
+  //load based on width
+  if($(document).width() <=600) {
+    canvas = document.querySelector('.aiIcon_2');
+    
+   $(".smallScreen").show();
+   
+   $("#navBar,.seeknal_navBar").click( function() {
+    
+     $(".seeknal_navBar_cont").show()
+     
+    })
+    
+    $(".seeknal_navBar_cont").click( function() {
+      $(this).hide()
+    })
+   
+ }
  
- $(".screens").hide()   
- 
-    $(document).ready(()=>{
+ else {
+   $(".wideScreen").show();
+  canvas = document.querySelector('.aiIcon');
+ }  
+  
+  $(".mainPage").show()
+      
+      function reduceLife() {
+                  $(".user_life").html($(".user_life").html()-1);  
 
-      $(".dark_deep").css({"background":"#120822","color":"white"});
+            if($(".user_life").html()<=0) {
+              popup.show();
+              $(".nextQuiz").addClass("disabled");
+            }
+      }
+
+      $("textarea").val("")
+
+ $(".dark_deep").css({"background":"#120822","color":"white"});
       $(".dark_deep").find("unactive").css("color","grey")
       $(".ark").css({"background":"#0a0514","color":"white"});
       $(".dark_white").css({"background":"black", "border": "1px solid rgb(105, 12, 198)","padding": "25px 10px 25px", "backdrop-filter":"blur(5px)", "border": "1px solid rgba(99, 102, 241, 0.3)", "box-shadow": "0 0 20px rgba(131, 9, 175,0.15),  inset 0 0 10px rgba(131, 9, 175,0.1);"})
@@ -2883,7 +3748,16 @@
       $(".dark_quiz").css({"background-color": "#16122a", "border-radius": "24px", "border": "1px solid rgba(205,125,255,0.5)"})
       $(".mainPage,.dark").css({"background":"#0f0b1e","color":"#abbeda"});
       $(".dark_header").css("color","#6366f1");
-      $(".dark_highlight").css("background","#676bbc")
+      $(".dark_highlight").css("background","#676bbc");
+
+      $(".lessons, .dark_list_or_important").hover(function() {
+        $(this).css("background","#1b1636");
+      }, 
+      
+      function(){
+        $(this).css("background","#16122a")
+      }
+    )
 
   $(".toggle_light").click(()=>{
 
@@ -2984,6 +3858,11 @@ upArrow.click(function(){
     
 
     
+  
+    
+   
+    
+    
   })
    
   
@@ -3060,9 +3939,9 @@ var continue_click_func = function() {
   console.log(page_counter)
   if(value >= $(".signalNote").eq(index)[0].scrollWidth - mainPage_width) {
 
-    $(this).parent().parent().siblings(".mainPage").children(".content").children(".lecture_wrapper").children(".subLec").eq(index+1).removeClass("disabled").css("cursor","pointer");
+    $(this).parent().parent().siblings(".mainPage").children(".content").children(".lecture_wrapper").children(".subLec").eq(index+1).removeClass("disabled").addClass("csr_pointer");
     $(this).parent().parent().siblings(".mainPage").children(".content").children(".lecture_wrapper").children(".subLec").eq(index+1).html(`<div class="lessons dark_transparent" id="lesson_${index+1}">
-        <div style="width: 30px;height: 30px;padding: 5px;border-radius: 8px;background: #e1e1ef;color: blue;display:flex;justify-content:  center;align-items: center;"><i class="fa fa-book" style="font-weight: 500px;"></i></div>
+        <div style="width: 50px;height: 30px;padding: 5px;border-radius: 8px;background: #e1e1ef;color: blue;display:flex;justify-content:  center;align-items: center;"><i class="fa fa-book" style="font-weight: 500px;"></i></div>
         
         <div style="width: 100%;">
         <small style="color: grey;font-size: 11px; font-weight: bolder;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">LESSON ${index+1} <i class="fa fa-check-circle finished_course" style="color:green;display:none"></i></small>
@@ -3073,7 +3952,11 @@ var continue_click_func = function() {
       </div>
       `)
     
-    $(".contin").text("Continue"); 
+    $(".contin").text("Continue");
+    
+    $(".lessons,.dark_list_or_important").css("background","#16122a")
+      $(".dark_transparent .data_x2d2, .dark_transparent .title").css("color","#a8dcf6");
+      $(".dark_progress").css("background","#a855f7"); 
   }
   
   //show finish course on the last Page
@@ -3089,7 +3972,8 @@ var continue_click_func = function() {
   
   if (value >= $(".signalNote").eq(index)[0].scrollWidth - $(".learningProgress").children("div").width()) {
      
-    $(".contin").text("Continue")
+    $(".contin").text("Continue");
+    
     value=0;
    
    setTimeout(()=>{
@@ -3103,6 +3987,11 @@ var continue_click_func = function() {
   
   
 
+
+  
+  notes_counter++;
+
+   reading_percentage.text( `${Math.floor((notes_counter/notes_length)*100)}%`);
 }
 
 var back_click_func = function() {
@@ -3116,14 +4005,14 @@ var back_click_func = function() {
   console.log(page_counter)
   if(value >= $(".signalNote").eq(index)[0].scrollWidth - mainPage_width) {
 
-    $(this).parent().parent().siblings(".mainPage").children(".content").children(".lecture_wrapper").children(".subLec").eq(index+1).removeClass("disabled").css("cursor","pointer");
+    $(this).parent().parent().siblings(".mainPage").children(".content").children(".lecture_wrapper").children(".subLec").eq(index+1).removeClass("disabled").addClass("csr_pointer");
     $(this).parent().parent().siblings(".mainPage").children(".content").children(".lecture_wrapper").children(".subLec").eq(index+1).html(`<div class="lessons dark_transparent" id="lesson_${index+1}">
-        <div style="width: 30px;height: 30px;padding: 5px;border-radius: 8px;background: #e1e1ef;color: blue;display:flex;justify-content:  center;align-items: center;"><i class="fa fa-book" style="font-weight: 500px;"></i></div>
+        <div style="width: 50px;height: 30px;padding: 5px;border-radius: 8px;background: #e1e1ef;color: blue;display:flex;justify-content:  center;align-items: center;"><i class="fa fa-book" style="font-weight: 500px;"></i></div>
         
         <div style="width: 100%;">
         <small style="color: grey;font-size: 11px; font-weight: bolder;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">LESSON ${index+1} <i class="fa fa-check-circle" style="color:green;display:none"></i></small>
         <span class="page_counter" style="opacity:0;">${index+1}</span>
-        <div style="display: flex;justify-content: space-between;margin-top: 5px; font-weight:bold;font: 13px;font-family: 'inter', sans-serif;width: 100%;" class="data_x2d2"> ${sublec_json[index]} <span style="color: white;background: blue;font-size: 12px; padding: 3px 10px;border-radius: 20px;margin-right: 0;">Start</span></div>
+        <div style="display: flex;justify-content: space-between;margin-top: 5px; font-weight:bold;font: 13px;font-family: 'inter', sans-serif;width: 100%;" class="data_x2d2"> <span>${sublec_json[index]} </span> <span style="color: white;background: blue;font-size: 12px; padding: 3px 10px;border-radius: 20px;margin-right: 0;">Start</span></div>
         </div>
         
       </div>
@@ -3144,7 +4033,8 @@ var back_click_func = function() {
   
   if (value >= $(".signalNote").eq(index)[0].scrollWidth - $(".learningProgress").children("div").width()) {
      
-    $(".contin").text("Continue")
+    $(".contin").text("Continue");
+    
     value=0;
    
    setTimeout(()=>{
@@ -3202,6 +4092,21 @@ if($(this).scrollTop() >= 10) {
         $(this).parent().children('.b').toggleClass("correct")
         $(this).parent().siblings().children(".b").children(".quizSts").css("opacity","1")
         $(this).parent().children(".b").children(".quizSts").css("opacity","1")
+            subQuiz_location = $(this).parent().parent(".subQuiz,.dummy_subQuiz");
+
+            // reduce the life (heart) by 1
+
+reduceLife();
+            
+
+
+
+
+
+  
+    
+  
+    
   }
   
   $(this).parent().siblings().children(".quizOption").css("pointer-events","none")
@@ -3209,9 +4114,9 @@ if($(this).scrollTop() >= 10) {
   $(this).parent().children(".quizOption").css("pointer-events","none")
   
 
-  $(".nextQuiz").show()
+  $(".nextQuiz").eq(index).show()
   
-  $(".contin").hide()
+  $(".contin").eq(index).hide()
   
  })
  
@@ -3273,6 +4178,8 @@ if(a.text()==drag_drop_quiz_answer["1"][a.index()]) {
 
   if(correct_counter>=4) {
     $(".draggable_option_Clear,.motivation_container").toggle();
+
+    $(".motivation_container").css('display','flex')
     
     
   }
@@ -3290,7 +4197,7 @@ if(a.text()==drag_drop_quiz_answer["1"][a.index()]) {
 
 else {
   a.css("color","red")
-  navigator.vibrate(500)
+  reduceLife();
 }
 
      
@@ -3369,36 +4276,55 @@ dts_packet_counter++;
     
      
     
-  if($(document).width() <=600) {
-   $(".smallScreen").show();
-   
-   $("#navBar,.seeknal_navBar").click( function() {
     
-     $(".seeknal_navBar_cont").show()
-     
-    })
-    
-    $(".seeknal_navBar_cont").click( function() {
-      $(this).hide()
-    })
+ // comment script
+ $(".comment_icon,.comment_container_back").click(function(e){
    
- }
- 
- else {
-   $(".wideScreen").show();
    
- }  
-    })
+          e.preventDefault();
+          e.stopPropagation();
+          $(".comment_container").eq(index).toggleClass("comment_container_active")
+          
+
+        })
+
+        
  
  $(".home").click(()=>{
 $(".mainPage").show();
 $(".lectureNote").hide()
 
  })
- 
 
-//=====================================AI button============================
- const canvas = document.getElementById('aiIcon');
+$(".comment_send_btn").click(function(){
+  $(".comment_chat_block").append(`<div class="user_comment">
+                    <div class="user_commentPix">
+
+                    </div>
+
+                        <div class="user_commentTxt">
+                            <b> ${$("#user_name").html()} <span style="color: grey;font-size: 12px;">12:09 AM</span></b>
+
+                            ${$(this).siblings(".comment_txtarea").val()}
+                        </div>
+
+                </div>
+`)
+
+$(this).siblings(".comment_txtarea").val("")
+$(this).parent().siblings(".comment_chat_block").scrollTop($(this).parent().siblings(".comment_chat_block")[0].scrollHeight)
+
+})
+
+ $(".upload_icon,.upload_back").click(function() {
+  $(".upload_container").toggle()
+  $(".upload_container input").focus();
+  $(".mainPage").toggleClass("pointer-events");
+ })
+
+
+
+
         const ctx = canvas.getContext('2d');
         const center = 12;
         let angle = 0;
@@ -3476,6 +4402,14 @@ $(".lectureNote").hide()
                 icon.style.transform = 'rotate(0deg)';
             }
         }
+
+})
+ 
+
+//=====================================AI button============================//
+
+
+ 
 
         
 
