@@ -1,6 +1,6 @@
 $(".screens,.settings,.history,.flashcard_section,.notepad_section").hide();
  
-//localStorage.clear()
+localStorage.clear()
  var storage = JSON.parse(localStorage.getItem("storage")) || {sublec:[],sublec_jsonM:[],note_scroll:[],notepad:[],numberCounter:0};
  
  
