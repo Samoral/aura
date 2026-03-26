@@ -1,6 +1,6 @@
 $(".screens,.settings,.history,.flashcard_section,.notepad_section").hide();
  
-//localStorage.clear()
+localStorage.clear()
  var storage = JSON.parse(localStorage.getItem("storage")) || {sublec:[],sublec_jsonM:[],note_scroll:[],notepad:[],numberCounter:0};
  
  
@@ -46,7 +46,7 @@ function uI() {
       $(".lessons,.dark_list_or_important").css("background","#16122a")
       $(".dark_transparent .data_x2d2, .dark_transparent .title").css("color","#a8dcf6");
       $(".dark_progress").css("background","#a855f7");
-      $(".dark_quiz").css({"background-color": "#16122a", "border-radius": "24px", "border": "0.3px solid rgba(255,255,255,0.05)"})
+      $(".dark_quiz").css({"background-color": "#16122a", "border-radius": "24px", "border": "0.3px solid rgba(205,125,255,0.5)"})
       $(".mainPage,.dark").css({"background":"#0f0b1e","color":"#abbeda"});
       $(".dark_header").css("color","#6366f1");
       $(".dark_highlight").css("background","#676bbc");
@@ -286,7 +286,7 @@ let noteFooter = $(`
  </div>  
     <div class="noteFooter">
       
-      <div style="padding:10px;width:250px;border-radius:8px;text-align:center;background:#1a1a1a;margin:10px;opacity:0.7;color:white" class="back_button" ><span style="opacity:1;font-weight:bolder;font-family:'Times New Roman'">Back</span></div>
+      <div style="padding:10px;width:250px;border-radius:8px;text-align:center;background:#1a1a1a;margin:10px;opacity:0.7;color:white" class="back_button prev_button" ><span style="opacity:1;font-weight:bolder;font-family:'Times New Roman'">Back</span></div>
       
       <div style="padding:10px;width:250px;border-radius:8px;text-align:center;background:#9333ea;margin:10px;opacity:0.7;color:white" class="contin" ><span style="opacity:1;font-weight:bolder;font-family:'Times New Roman'">Continue</span></div>
       
@@ -708,19 +708,22 @@ let reading_percentage = $(".reading_percentage");
 $(".collapsible_caller").click(collapsibleFnc)
 
 $(".settingsBtn,.settingsBack").click(function(){
-  
+  $(".pages:visible").toggle();
   $(".settings").toggle();
 })
 
 $(".historyBtn,.historyBack").click(function() {
+  $(".pages:visible").toggle();
   $(".history").toggle()
 })
 
 $(".flashcardBtn,.flashcard_back").click(function() {
+  $(".pages:visible").toggle();
   $(".flashcard_section").toggle();
 })
 
 $(".notepadBtn,.notepad_back").click(function() {
+  $(".pages:visible").toggle();
   $(".notepad_section").toggle();
 })
 
@@ -932,8 +935,8 @@ storage.note_scroll[index]=value;
   console.log(page_counter)
   if(value >= $(".signalNote").eq(index)[0].scrollWidth - mainPage_width) {
 
-    $(this).parent().parent().siblings(".mainPage").children(".content").children(".lecture_wrapper").children(".subLec").eq(index+1).removeClass("disabled").addClass("csr_pointer");
-    $(this).parent().parent().siblings(".mainPage").children(".content").children(".lecture_wrapper").children(".subLec").eq(index+1).html(`<div class="lessons dark_transparent" id="lesson_${index+1}">
+    $(".contin").parent().parent().siblings(".mainPage").children(".content").children(".lecture_wrapper").children(".subLec").eq(index+1).removeClass("disabled").addClass("csr_pointer");
+    $(".contin").parent().parent().siblings(".mainPage").children(".content").children(".lecture_wrapper").children(".subLec").eq(index+1).html(`<div class="lessons dark_transparent" id="lesson_${index+1}">
         <div style="width: 50px;height: 30px;padding: 5px;border-radius: 8px;background: #e1e1ef;color: blue;display:flex;justify-content:  center;align-items: center;"><i class="fa fa-book" style="font-weight: 500px;"></i></div>
         
         <div style="width: 100%;">
@@ -987,8 +990,10 @@ storage.note_scroll[index]=value;
    
   }
   $(".signalNote").eq(index).scrollLeft(value)
+
+  if($(document).width() <=600) {
   $(".contin").eq(index).show()
-  
+  }
   
   
 
@@ -1020,6 +1025,7 @@ localStorage.setItem("storage",JSON.stringify(storage));
 }
 
 var back_click_func = function() {
+  alert()
   value = $(".signalNote").eq(index).scrollLeft() - mainPage_width;
  numberCounting--;
   storage.note_scroll[index]=value;
@@ -1081,7 +1087,8 @@ var back_click_func = function() {
 
 
 $(".contin").on("click",continue_click_func);
-$(document).on("click",".back_button",back_click_func)
+$(document).on("click",".next_button",continue_click_func)
+$(document).on("click",".prev_button",back_click_func)
 
 
 $(".signalNote").on("scroll", function() {
